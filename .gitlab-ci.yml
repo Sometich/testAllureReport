@@ -1,0 +1,14 @@
+image: gradle:alpine
+
+default:
+  tags:
+    - labRunner
+
+stages:
+  - test
+
+Tests with allure:
+  stage: test
+  script:
+    - ./gradlew clean test
+    - ./gradlew allureReport
